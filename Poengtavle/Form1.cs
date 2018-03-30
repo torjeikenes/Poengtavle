@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Poengtavle
 {
@@ -18,7 +19,8 @@ namespace Poengtavle
         private int totSec = 1800;
         private int min;
         private int sec;
-
+        private string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+       
         public Form1()
         {
             InitializeComponent();
@@ -55,12 +57,14 @@ namespace Poengtavle
         {
             homeScore.Value++;
             UpdateScore();
+            WriteCsv(HomeTeam.Text);
         }
 
         private void ScoreAway_Click(object sender, EventArgs e)
         {
             awayScore.Value++;
             UpdateScore();
+            WriteCsv(AwayTeam.Text);
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -127,6 +131,16 @@ namespace Poengtavle
 
             visning.Tid.Text = min + ":" + sec;
             time.Text = min + ":" + sec;
+        }
+
+        private void WriteCsv(string team)
+        {
+            using(StreamWriter sw = new StreamWriter(path + "\\" + HomeTeam.Text + "-" + AwayTeam.Text, append: true))
+            {
+                sw.WriteLine(period + "," + time.Text + "," + team);
+            }
+
+
         }
     }
 }

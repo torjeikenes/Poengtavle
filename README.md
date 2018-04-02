@@ -1,5 +1,6 @@
 # Poengtavle
-Minimumskrav til første versjon
+
+## Minimumskrav til første versjon
 
 - [x] Poengtavle må kunne brukes minst en hall idrett
 - [x] Sette Antall omganger
@@ -8,7 +9,7 @@ Minimumskrav til første versjon
 - [x] Registrere mål
 - [x] Visning på full skjerm
 
-Krav til en videreutviklet versjon
+## Krav til en videreutviklet versjon
 
 - [ ] Poengtavlen skal kunne brukes flere hallidretter
 - [ ] Når kamp nummer velges skal lag og spillere, med draktnummer, være tilgjengelig i brukergrensesnittet
@@ -19,3 +20,7 @@ Krav til en videreutviklet versjon
 - [x] Format som passer til visning på storskjerm
 - [ ] Mulighet til å spille pausemusikk når det er Stopp i spillet og mellom omgangen. Automatikk?
 - [ ] Mulighet til å vise reklame i pausen, samt før og etter kamp
+
+## Ekstrafunksjoner
+
+- [ ] Velge folder for å lagre filer

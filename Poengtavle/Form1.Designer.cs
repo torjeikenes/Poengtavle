@@ -104,7 +104,7 @@
             // awayScore
             // 
             this.awayScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.awayScore.Location = new System.Drawing.Point(174, 234);
+            this.awayScore.Location = new System.Drawing.Point(298, 234);
             this.awayScore.Name = "awayScore";
             this.awayScore.Size = new System.Drawing.Size(65, 35);
             this.awayScore.TabIndex = 3;
@@ -126,7 +126,7 @@
             // 
             this.awayLb.AutoSize = true;
             this.awayLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.awayLb.Location = new System.Drawing.Point(182, 211);
+            this.awayLb.Location = new System.Drawing.Point(306, 211);
             this.awayLb.Name = "awayLb";
             this.awayLb.Size = new System.Drawing.Size(48, 20);
             this.awayLb.TabIndex = 5;
@@ -147,7 +147,7 @@
             // ScoreAway
             // 
             this.ScoreAway.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreAway.Location = new System.Drawing.Point(160, 275);
+            this.ScoreAway.Location = new System.Drawing.Point(284, 275);
             this.ScoreAway.Name = "ScoreAway";
             this.ScoreAway.Size = new System.Drawing.Size(102, 72);
             this.ScoreAway.TabIndex = 7;
@@ -255,7 +255,7 @@
             this.SetupPanel.Controls.Add(this.periods);
             this.SetupPanel.Controls.Add(this.label4);
             this.SetupPanel.Controls.Add(this.minutes);
-            this.SetupPanel.Location = new System.Drawing.Point(12, 18);
+            this.SetupPanel.Location = new System.Drawing.Point(12, 27);
             this.SetupPanel.Name = "SetupPanel";
             this.SetupPanel.Size = new System.Drawing.Size(371, 222);
             this.SetupPanel.TabIndex = 15;
@@ -331,15 +331,15 @@
             this.runningPanel.Controls.Add(this.ScoreAway);
             this.runningPanel.Controls.Add(this.awayLb);
             this.runningPanel.Controls.Add(this.scoreHome);
-            this.runningPanel.Location = new System.Drawing.Point(481, 18);
+            this.runningPanel.Location = new System.Drawing.Point(435, 27);
             this.runningPanel.Name = "runningPanel";
-            this.runningPanel.Size = new System.Drawing.Size(416, 497);
+            this.runningPanel.Size = new System.Drawing.Size(416, 557);
             this.runningPanel.TabIndex = 16;
             // 
             // wmp
             // 
             this.wmp.Enabled = true;
-            this.wmp.Location = new System.Drawing.Point(29, 385);
+            this.wmp.Location = new System.Drawing.Point(27, 457);
             this.wmp.Name = "wmp";
             this.wmp.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp.OcxState")));
             this.wmp.Size = new System.Drawing.Size(249, 62);
@@ -372,7 +372,7 @@
             // 
             // changeMusic
             // 
-            this.changeMusic.Location = new System.Drawing.Point(31, 455);
+            this.changeMusic.Location = new System.Drawing.Point(29, 527);
             this.changeMusic.Name = "changeMusic";
             this.changeMusic.Size = new System.Drawing.Size(67, 27);
             this.changeMusic.TabIndex = 17;
@@ -385,7 +385,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1187, 559);
+            this.ClientSize = new System.Drawing.Size(1190, 596);
             this.Controls.Add(this.runningPanel);
             this.Controls.Add(this.SetupPanel);
             this.Name = "Form1";

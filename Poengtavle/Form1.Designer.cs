@@ -47,16 +47,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.SetupPanel = new System.Windows.Forms.Panel();
+            this.autoplay = new System.Windows.Forms.CheckBox();
             this.AwayTeam = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.HomeTeam = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Setup = new System.Windows.Forms.Button();
             this.runningPanel = new System.Windows.Forms.Panel();
+            this.wmp = new AxWMPLib.AxWindowsMediaPlayer();
+            this.AutoMusic = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.autoplay = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.ofd = new System.Windows.Forms.OpenFileDialog();
+            this.changeMusic = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.homeScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.awayScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.periods)).BeginInit();
@@ -64,7 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.period)).BeginInit();
             this.SetupPanel.SuspendLayout();
             this.runningPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmp)).BeginInit();
             this.SuspendLayout();
             // 
             // startTimer
@@ -258,6 +260,16 @@
             this.SetupPanel.Size = new System.Drawing.Size(371, 222);
             this.SetupPanel.TabIndex = 15;
             // 
+            // autoplay
+            // 
+            this.autoplay.AutoSize = true;
+            this.autoplay.Location = new System.Drawing.Point(267, 3);
+            this.autoplay.Name = "autoplay";
+            this.autoplay.Size = new System.Drawing.Size(101, 17);
+            this.autoplay.TabIndex = 14;
+            this.autoplay.Text = "Autospill musikk";
+            this.autoplay.UseVisualStyleBackColor = true;
+            // 
             // AwayTeam
             // 
             this.AwayTeam.Location = new System.Drawing.Point(145, 100);
@@ -304,8 +316,9 @@
             // 
             // runningPanel
             // 
-            this.runningPanel.Controls.Add(this.axWindowsMediaPlayer1);
-            this.runningPanel.Controls.Add(this.checkBox1);
+            this.runningPanel.Controls.Add(this.changeMusic);
+            this.runningPanel.Controls.Add(this.wmp);
+            this.runningPanel.Controls.Add(this.AutoMusic);
             this.runningPanel.Controls.Add(this.button1);
             this.runningPanel.Controls.Add(this.stopTimer);
             this.runningPanel.Controls.Add(this.startTimer);
@@ -320,8 +333,27 @@
             this.runningPanel.Controls.Add(this.scoreHome);
             this.runningPanel.Location = new System.Drawing.Point(481, 18);
             this.runningPanel.Name = "runningPanel";
-            this.runningPanel.Size = new System.Drawing.Size(416, 461);
+            this.runningPanel.Size = new System.Drawing.Size(416, 497);
             this.runningPanel.TabIndex = 16;
+            // 
+            // wmp
+            // 
+            this.wmp.Enabled = true;
+            this.wmp.Location = new System.Drawing.Point(29, 385);
+            this.wmp.Name = "wmp";
+            this.wmp.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp.OcxState")));
+            this.wmp.Size = new System.Drawing.Size(249, 62);
+            this.wmp.TabIndex = 16;
+            // 
+            // AutoMusic
+            // 
+            this.AutoMusic.AutoSize = true;
+            this.AutoMusic.Location = new System.Drawing.Point(311, 3);
+            this.AutoMusic.Name = "AutoMusic";
+            this.AutoMusic.Size = new System.Drawing.Size(101, 17);
+            this.AutoMusic.TabIndex = 15;
+            this.AutoMusic.Text = "Autospill musikk";
+            this.AutoMusic.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -333,41 +365,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.ResetTimer);
             // 
-            // autoplay
+            // ofd
             // 
-            this.autoplay.AutoSize = true;
-            this.autoplay.Location = new System.Drawing.Point(267, 3);
-            this.autoplay.Name = "autoplay";
-            this.autoplay.Size = new System.Drawing.Size(101, 17);
-            this.autoplay.TabIndex = 14;
-            this.autoplay.Text = "Autospill musikk";
-            this.autoplay.UseVisualStyleBackColor = true;
+            this.ofd.DefaultExt = "mp3";
+            this.ofd.Multiselect = true;
             // 
-            // checkBox1
+            // changeMusic
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(311, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 17);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Autospill musikk";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(29, 392);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(289, 54);
-            this.axWindowsMediaPlayer1.TabIndex = 16;
+            this.changeMusic.Location = new System.Drawing.Point(31, 455);
+            this.changeMusic.Name = "changeMusic";
+            this.changeMusic.Size = new System.Drawing.Size(67, 27);
+            this.changeMusic.TabIndex = 17;
+            this.changeMusic.Text = "Ny musikk";
+            this.changeMusic.UseVisualStyleBackColor = true;
+            this.changeMusic.Click += new System.EventHandler(this.LoadMusic);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(920, 543);
+            this.ClientSize = new System.Drawing.Size(1187, 559);
             this.Controls.Add(this.runningPanel);
             this.Controls.Add(this.SetupPanel);
             this.Name = "Form1";
@@ -382,7 +400,7 @@
             this.SetupPanel.PerformLayout();
             this.runningPanel.ResumeLayout(false);
             this.runningPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -414,8 +432,10 @@
         private System.Windows.Forms.TextBox HomeTeam;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox autoplay;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private AxWMPLib.AxWindowsMediaPlayer wmp;
+        private System.Windows.Forms.CheckBox AutoMusic;
+        private System.Windows.Forms.OpenFileDialog ofd;
+        private System.Windows.Forms.Button changeMusic;
     }
 }
 

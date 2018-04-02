@@ -18,7 +18,7 @@
 - [ ] Registrering av bestraffning
 - [ ] En visuell logg for hendelser
 - [x] Format som passer til visning på storskjerm
-- [ ] Mulighet til å spille pausemusikk når det er Stopp i spillet og mellom omgangen. Automatikk?
+- [x] Mulighet til å spille pausemusikk når det er Stopp i spillet og mellom omgangen. Automatikk?
 - [ ] Mulighet til å vise reklame i pausen, samt før og etter kamp
 
 ## Ekstrafunksjoner

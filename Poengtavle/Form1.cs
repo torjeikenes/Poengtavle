@@ -14,8 +14,6 @@ namespace Poengtavle
     public partial class Form1 : Form
     {
         Visning visning = new Visning();
-        private int home;
-        private int away;
         private int totSec = 1800;
         private int min;
         private int sec;
@@ -171,6 +169,7 @@ namespace Poengtavle
         }
         #endregion
 
+        #region music
         // setter opp en spilleliste med valgte sanger
         private void LoadMusic(object sender, EventArgs e)
         {
@@ -195,7 +194,9 @@ namespace Poengtavle
             //stopper avspilling fordi den automatisk vil starte avspilling
             wmp.Ctlcontrols.stop();
         }
+        #endregion
 
+        #region cards
         private void CardClicked(object sender, EventArgs e)
         {
             PictureBox card = sender as PictureBox;
@@ -229,5 +230,6 @@ namespace Poengtavle
             }
 
         }
+        #endregion
     }
 }

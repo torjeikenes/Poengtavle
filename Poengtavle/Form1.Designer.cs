@@ -54,11 +54,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Setup = new System.Windows.Forms.Button();
             this.runningPanel = new System.Windows.Forms.Panel();
+            this.changeMusic = new System.Windows.Forms.Button();
             this.wmp = new AxWMPLib.AxWindowsMediaPlayer();
             this.AutoMusic = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
-            this.changeMusic = new System.Windows.Forms.Button();
+            this.RedHome = new System.Windows.Forms.PictureBox();
+            this.YellowHome = new System.Windows.Forms.PictureBox();
+            this.RedAway = new System.Windows.Forms.PictureBox();
+            this.YellowAway = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.homeScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.awayScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.periods)).BeginInit();
@@ -67,6 +71,10 @@
             this.SetupPanel.SuspendLayout();
             this.runningPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wmp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YellowHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedAway)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YellowAway)).BeginInit();
             this.SuspendLayout();
             // 
             // startTimer
@@ -104,7 +112,7 @@
             // awayScore
             // 
             this.awayScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.awayScore.Location = new System.Drawing.Point(298, 234);
+            this.awayScore.Location = new System.Drawing.Point(310, 234);
             this.awayScore.Name = "awayScore";
             this.awayScore.Size = new System.Drawing.Size(65, 35);
             this.awayScore.TabIndex = 3;
@@ -126,7 +134,7 @@
             // 
             this.awayLb.AutoSize = true;
             this.awayLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.awayLb.Location = new System.Drawing.Point(306, 211);
+            this.awayLb.Location = new System.Drawing.Point(311, 211);
             this.awayLb.Name = "awayLb";
             this.awayLb.Size = new System.Drawing.Size(48, 20);
             this.awayLb.TabIndex = 5;
@@ -149,7 +157,7 @@
             this.ScoreAway.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoreAway.Location = new System.Drawing.Point(284, 275);
             this.ScoreAway.Name = "ScoreAway";
-            this.ScoreAway.Size = new System.Drawing.Size(102, 72);
+            this.ScoreAway.Size = new System.Drawing.Size(109, 72);
             this.ScoreAway.TabIndex = 7;
             this.ScoreAway.Text = "Mål Borte";
             this.ScoreAway.UseVisualStyleBackColor = true;
@@ -316,6 +324,10 @@
             // 
             // runningPanel
             // 
+            this.runningPanel.Controls.Add(this.RedAway);
+            this.runningPanel.Controls.Add(this.YellowAway);
+            this.runningPanel.Controls.Add(this.RedHome);
+            this.runningPanel.Controls.Add(this.YellowHome);
             this.runningPanel.Controls.Add(this.changeMusic);
             this.runningPanel.Controls.Add(this.wmp);
             this.runningPanel.Controls.Add(this.AutoMusic);
@@ -335,6 +347,16 @@
             this.runningPanel.Name = "runningPanel";
             this.runningPanel.Size = new System.Drawing.Size(416, 557);
             this.runningPanel.TabIndex = 16;
+            // 
+            // changeMusic
+            // 
+            this.changeMusic.Location = new System.Drawing.Point(29, 527);
+            this.changeMusic.Name = "changeMusic";
+            this.changeMusic.Size = new System.Drawing.Size(67, 27);
+            this.changeMusic.TabIndex = 17;
+            this.changeMusic.Text = "Ny musikk";
+            this.changeMusic.UseVisualStyleBackColor = true;
+            this.changeMusic.Click += new System.EventHandler(this.LoadMusic);
             // 
             // wmp
             // 
@@ -370,15 +392,49 @@
             this.ofd.DefaultExt = "mp3";
             this.ofd.Multiselect = true;
             // 
-            // changeMusic
+            // RedHome
             // 
-            this.changeMusic.Location = new System.Drawing.Point(29, 527);
-            this.changeMusic.Name = "changeMusic";
-            this.changeMusic.Size = new System.Drawing.Size(67, 27);
-            this.changeMusic.TabIndex = 17;
-            this.changeMusic.Text = "Ny musikk";
-            this.changeMusic.UseVisualStyleBackColor = true;
-            this.changeMusic.Click += new System.EventHandler(this.LoadMusic);
+            this.RedHome.Image = ((System.Drawing.Image)(resources.GetObject("RedHome.Image")));
+            this.RedHome.Location = new System.Drawing.Point(86, 353);
+            this.RedHome.Name = "RedHome";
+            this.RedHome.Size = new System.Drawing.Size(52, 75);
+            this.RedHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RedHome.TabIndex = 18;
+            this.RedHome.TabStop = false;
+            this.RedHome.Click += new System.EventHandler(this.CardClicked);
+            // 
+            // YellowHome
+            // 
+            this.YellowHome.Image = global::Poengtavle.Properties.Resources.yellow;
+            this.YellowHome.Location = new System.Drawing.Point(29, 353);
+            this.YellowHome.Name = "YellowHome";
+            this.YellowHome.Size = new System.Drawing.Size(52, 75);
+            this.YellowHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.YellowHome.TabIndex = 17;
+            this.YellowHome.TabStop = false;
+            this.YellowHome.Click += new System.EventHandler(this.CardClicked);
+            // 
+            // RedAway
+            // 
+            this.RedAway.Image = ((System.Drawing.Image)(resources.GetObject("RedAway.Image")));
+            this.RedAway.Location = new System.Drawing.Point(341, 353);
+            this.RedAway.Name = "RedAway";
+            this.RedAway.Size = new System.Drawing.Size(52, 75);
+            this.RedAway.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RedAway.TabIndex = 20;
+            this.RedAway.TabStop = false;
+            this.RedAway.Click += new System.EventHandler(this.CardClicked);
+            // 
+            // YellowAway
+            // 
+            this.YellowAway.Image = global::Poengtavle.Properties.Resources.yellow;
+            this.YellowAway.Location = new System.Drawing.Point(284, 353);
+            this.YellowAway.Name = "YellowAway";
+            this.YellowAway.Size = new System.Drawing.Size(52, 75);
+            this.YellowAway.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.YellowAway.TabIndex = 19;
+            this.YellowAway.TabStop = false;
+            this.YellowAway.Click += new System.EventHandler(this.CardClicked);
             // 
             // Form1
             // 
@@ -401,6 +457,10 @@
             this.runningPanel.ResumeLayout(false);
             this.runningPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wmp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YellowHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedAway)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YellowAway)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,6 +496,10 @@
         private System.Windows.Forms.CheckBox AutoMusic;
         private System.Windows.Forms.OpenFileDialog ofd;
         private System.Windows.Forms.Button changeMusic;
+        private System.Windows.Forms.PictureBox YellowHome;
+        private System.Windows.Forms.PictureBox RedHome;
+        private System.Windows.Forms.PictureBox RedAway;
+        private System.Windows.Forms.PictureBox YellowAway;
     }
 }
 

@@ -195,5 +195,39 @@ namespace Poengtavle
             //stopper avspilling fordi den automatisk vil starte avspilling
             wmp.Ctlcontrols.stop();
         }
+
+        private void CardClicked(object sender, EventArgs e)
+        {
+            PictureBox card = sender as PictureBox;
+            PictureBox ShowCard = visning.YellowHome;
+
+            switch (card.Name)
+            {
+                case "YellowHome":
+                    ShowCard = visning.YellowHome;
+                    break;
+                case "RedHome":
+                    ShowCard = visning.RedHome;
+                    break;
+                case "YellowAway":
+                    ShowCard = visning.YellowAway;
+                    break;
+                case "RedAway":
+                    ShowCard = visning.RedAway;
+                    break;
+            }
+
+            if (card.BorderStyle == BorderStyle.None)
+            {
+                card.BorderStyle = BorderStyle.Fixed3D;
+                ShowCard.Visible = true;
+            }
+            else
+            {
+                card.BorderStyle = BorderStyle.None;
+                ShowCard.Visible = false;
+            }
+
+        }
     }
 }

@@ -70,6 +70,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Visning.resx">
       <DependentUpon>Visning.cs</DependentUpon>
@@ -105,6 +106,15 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\200px-Red_card.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\200px-Yellow_card.svg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

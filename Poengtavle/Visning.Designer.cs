@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Visning));
             this.Tid = new System.Windows.Forms.Label();
             this.homeScr = new System.Windows.Forms.Label();
             this.AwayScr = new System.Windows.Forms.Label();
@@ -35,6 +36,14 @@
             this.AwayLb = new System.Windows.Forms.Label();
             this.Period = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.RedAway = new System.Windows.Forms.PictureBox();
+            this.YellowAway = new System.Windows.Forms.PictureBox();
+            this.RedHome = new System.Windows.Forms.PictureBox();
+            this.YellowHome = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.RedAway)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YellowAway)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YellowHome)).BeginInit();
             this.SuspendLayout();
             // 
             // Tid
@@ -107,11 +116,55 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Omgang";
             // 
+            // RedAway
+            // 
+            this.RedAway.Image = ((System.Drawing.Image)(resources.GetObject("RedAway.Image")));
+            this.RedAway.Location = new System.Drawing.Point(469, 282);
+            this.RedAway.Name = "RedAway";
+            this.RedAway.Size = new System.Drawing.Size(52, 75);
+            this.RedAway.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RedAway.TabIndex = 24;
+            this.RedAway.TabStop = false;
+            // 
+            // YellowAway
+            // 
+            this.YellowAway.Image = global::Poengtavle.Properties.Resources.yellow;
+            this.YellowAway.Location = new System.Drawing.Point(412, 282);
+            this.YellowAway.Name = "YellowAway";
+            this.YellowAway.Size = new System.Drawing.Size(52, 75);
+            this.YellowAway.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.YellowAway.TabIndex = 23;
+            this.YellowAway.TabStop = false;
+            // 
+            // RedHome
+            // 
+            this.RedHome.Image = ((System.Drawing.Image)(resources.GetObject("RedHome.Image")));
+            this.RedHome.Location = new System.Drawing.Point(159, 282);
+            this.RedHome.Name = "RedHome";
+            this.RedHome.Size = new System.Drawing.Size(52, 75);
+            this.RedHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RedHome.TabIndex = 22;
+            this.RedHome.TabStop = false;
+            // 
+            // YellowHome
+            // 
+            this.YellowHome.Image = global::Poengtavle.Properties.Resources.yellow;
+            this.YellowHome.Location = new System.Drawing.Point(101, 282);
+            this.YellowHome.Name = "YellowHome";
+            this.YellowHome.Size = new System.Drawing.Size(52, 75);
+            this.YellowHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.YellowHome.TabIndex = 21;
+            this.YellowHome.TabStop = false;
+            // 
             // Visning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 431);
+            this.Controls.Add(this.RedAway);
+            this.Controls.Add(this.YellowAway);
+            this.Controls.Add(this.RedHome);
+            this.Controls.Add(this.YellowHome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Period);
             this.Controls.Add(this.AwayLb);
@@ -122,6 +175,10 @@
             this.Name = "Visning";
             this.Text = "Visning";
             this.Load += new System.EventHandler(this.Visning_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.RedAway)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YellowAway)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YellowHome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +192,9 @@
         public System.Windows.Forms.Label Tid;
         public System.Windows.Forms.Label homeLb;
         public System.Windows.Forms.Label AwayLb;
+        public System.Windows.Forms.PictureBox RedAway;
+        public System.Windows.Forms.PictureBox YellowAway;
+        public System.Windows.Forms.PictureBox RedHome;
+        public System.Windows.Forms.PictureBox YellowHome;
     }
 }

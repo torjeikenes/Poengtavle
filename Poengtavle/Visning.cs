@@ -28,6 +28,10 @@ namespace Poengtavle
 
         private void Visning_Load(object sender, EventArgs e)
         {
+            foreach (PictureBox pict in Controls.OfType<PictureBox>())
+            {
+                pict.Visible = false;
+            }
 
         }
         public void SetScore(string team)

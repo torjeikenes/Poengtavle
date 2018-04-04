@@ -162,7 +162,7 @@ namespace Poengtavle
         // skriver ned mål i en csv fil
         private void WriteCsv(string team, string action)
         {
-            using(StreamWriter sw = new StreamWriter(path + "\\" + HomeTeam.Text + "-" + AwayTeam.Text, append: true))
+            using(StreamWriter sw = new StreamWriter(path + "\\" + HomeTeam.Text + "-" + AwayTeam.Text + ".csv", append: true))
             {
                 Console.WriteLine(period);
 

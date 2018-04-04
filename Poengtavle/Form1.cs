@@ -160,12 +160,18 @@ namespace Poengtavle
 
         #region csv
         // skriver ned mål i en csv fil
-        private void WriteCsv(string team)
+        private void WriteCsv(string team, string action)
         {
             using(StreamWriter sw = new StreamWriter(path + "\\" + HomeTeam.Text + "-" + AwayTeam.Text, append: true))
             {
-                sw.WriteLine(period + "," + time.Text + "," + team);
+                Console.WriteLine(period);
+
+                sw.WriteLine(action + "," + period.Value + "," + time.Text + "," + team);
             }
+        }
+        private void WriteCsv(string team)
+        {
+            WriteCsv(team, "mål");
         }
         #endregion
 
@@ -202,19 +208,30 @@ namespace Poengtavle
             PictureBox card = sender as PictureBox;
             PictureBox ShowCard = visning.YellowHome;
 
+            string team = "";
+            string action = "";
+
             switch (card.Name)
             {
                 case "YellowHome":
                     ShowCard = visning.YellowHome;
+                    team = HomeTeam.Text;
+                    action = "Yellow card";
                     break;
                 case "RedHome":
                     ShowCard = visning.RedHome;
+                    team = HomeTeam.Text;
+                    action = "Red card";
                     break;
                 case "YellowAway":
                     ShowCard = visning.YellowAway;
+                    team = AwayTeam.Text;
+                    action = "Yellow card";
                     break;
                 case "RedAway":
                     ShowCard = visning.RedAway;
+                    team = AwayTeam.Text;
+                    action = "Red card";
                     break;
             }
 
@@ -222,6 +239,7 @@ namespace Poengtavle
             {
                 card.BorderStyle = BorderStyle.Fixed3D;
                 ShowCard.Visible = true;
+                WriteCsv(team, action);
             }
             else
             {

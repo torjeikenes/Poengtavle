@@ -15,7 +15,7 @@
 - [ ] Når kamp nummer velges skal lag og spillere, med draktnummer, være tilgjengelig i brukergrensesnittet
 - [ ] Mulighet for å redigere og lagre endringer i lag
 - [x] Registrering mål med tidsreferanse
-- [ ] Registrering av bestraffning
+- [x] Registrering av bestraffning
 - [ ] En visuell logg for hendelser
 - [x] Format som passer til visning på storskjerm
 - [x] Mulighet til å spille pausemusikk når det er Stopp i spillet og mellom omgangen. Automatikk?

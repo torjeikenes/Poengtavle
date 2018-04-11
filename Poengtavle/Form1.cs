@@ -18,6 +18,9 @@ namespace Poengtavle
         private int min;
         private int sec;
         private string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        List<cdTimer> penalties = new List<cdTimer>();
+        int hTimers = 0;
+        int aTimers = 0;
        
         public Form1()
         {
@@ -104,6 +107,12 @@ namespace Poengtavle
             }
 
             DisplayTime(totSec);
+
+            foreach(cdTimer t in penalties)
+            {
+                t.tick();
+
+            }
 
         }
 
@@ -249,5 +258,23 @@ namespace Poengtavle
 
         }
         #endregion
+
+        private void Penalty(object sender, EventArgs e)
+        {
+            Button bt = sender as Button;
+            
+            if (bt.Name.Contains("Hjemme"))
+            {
+                penalties.Add(new cdTimer(120,"hjemme", hTimers, visning));
+                hTimers++;
+            }
+            else
+            {
+                penalties.Add(new cdTimer(120,"borte", aTimers, visning));
+                aTimers++;
+            }
+
+
+        }
     }
 }

@@ -33,9 +33,8 @@ namespace Poengtavle
             {
                 this.Location = new Point(locX + 300,locY + nr*(this.Height + 20));
             }
-            //this.Text = "02:00";
+            this.Text = "02:00";
             this.Font = new Font("Microsoft Sans Serif",16);
-            tick();
 
             f.Controls.Add(this);
             Console.WriteLine(this.Location);

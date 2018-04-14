@@ -48,7 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.SetupPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.penaltyTime = new System.Windows.Forms.NumericUpDown();
             this.autoplay = new System.Windows.Forms.CheckBox();
             this.AwayTeam = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,6 +56,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Setup = new System.Windows.Forms.Button();
             this.runningPanel = new System.Windows.Forms.Panel();
+            this.AdsBtn = new System.Windows.Forms.Button();
+            this.AutoAds = new System.Windows.Forms.CheckBox();
             this.UtvisningBorte = new System.Windows.Forms.Button();
             this.UtvisningHjemme = new System.Windows.Forms.Button();
             this.RedAway = new System.Windows.Forms.PictureBox();
@@ -73,7 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.minutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.period)).BeginInit();
             this.SetupPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.penaltyTime)).BeginInit();
             this.runningPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RedAway)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YellowAway)).BeginInit();
@@ -85,7 +87,7 @@
             // startTimer
             // 
             this.startTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startTimer.Location = new System.Drawing.Point(12, 140);
+            this.startTimer.Location = new System.Drawing.Point(3, 104);
             this.startTimer.Name = "startTimer";
             this.startTimer.Size = new System.Drawing.Size(126, 55);
             this.startTimer.TabIndex = 0;
@@ -96,7 +98,7 @@
             // stopTimer
             // 
             this.stopTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stopTimer.Location = new System.Drawing.Point(144, 140);
+            this.stopTimer.Location = new System.Drawing.Point(135, 104);
             this.stopTimer.Name = "stopTimer";
             this.stopTimer.Size = new System.Drawing.Size(134, 55);
             this.stopTimer.TabIndex = 1;
@@ -107,7 +109,7 @@
             // homeScore
             // 
             this.homeScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeScore.Location = new System.Drawing.Point(58, 252);
+            this.homeScore.Location = new System.Drawing.Point(49, 216);
             this.homeScore.Name = "homeScore";
             this.homeScore.Size = new System.Drawing.Size(64, 35);
             this.homeScore.TabIndex = 2;
@@ -117,7 +119,7 @@
             // awayScore
             // 
             this.awayScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.awayScore.Location = new System.Drawing.Point(310, 252);
+            this.awayScore.Location = new System.Drawing.Point(301, 216);
             this.awayScore.Name = "awayScore";
             this.awayScore.Size = new System.Drawing.Size(65, 35);
             this.awayScore.TabIndex = 3;
@@ -128,7 +130,7 @@
             // 
             this.homeLb.AutoSize = true;
             this.homeLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeLb.Location = new System.Drawing.Point(56, 229);
+            this.homeLb.Location = new System.Drawing.Point(47, 193);
             this.homeLb.Name = "homeLb";
             this.homeLb.Size = new System.Drawing.Size(68, 20);
             this.homeLb.TabIndex = 4;
@@ -139,7 +141,7 @@
             // 
             this.awayLb.AutoSize = true;
             this.awayLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.awayLb.Location = new System.Drawing.Point(311, 229);
+            this.awayLb.Location = new System.Drawing.Point(302, 193);
             this.awayLb.Name = "awayLb";
             this.awayLb.Size = new System.Drawing.Size(48, 20);
             this.awayLb.TabIndex = 5;
@@ -149,7 +151,7 @@
             // scoreHome
             // 
             this.scoreHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreHome.Location = new System.Drawing.Point(29, 293);
+            this.scoreHome.Location = new System.Drawing.Point(20, 257);
             this.scoreHome.Name = "scoreHome";
             this.scoreHome.Size = new System.Drawing.Size(109, 72);
             this.scoreHome.TabIndex = 6;
@@ -160,7 +162,7 @@
             // ScoreAway
             // 
             this.ScoreAway.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreAway.Location = new System.Drawing.Point(284, 293);
+            this.ScoreAway.Location = new System.Drawing.Point(275, 257);
             this.ScoreAway.Name = "ScoreAway";
             this.ScoreAway.Size = new System.Drawing.Size(109, 72);
             this.ScoreAway.TabIndex = 7;
@@ -259,7 +261,7 @@
             // SetupPanel
             // 
             this.SetupPanel.Controls.Add(this.label1);
-            this.SetupPanel.Controls.Add(this.numericUpDown1);
+            this.SetupPanel.Controls.Add(this.penaltyTime);
             this.SetupPanel.Controls.Add(this.autoplay);
             this.SetupPanel.Controls.Add(this.AwayTeam);
             this.SetupPanel.Controls.Add(this.label7);
@@ -284,17 +286,22 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Utviselsestid";
             // 
-            // numericUpDown1
+            // penaltyTime
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(113, 60);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.penaltyTime.Location = new System.Drawing.Point(113, 60);
+            this.penaltyTime.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 20;
+            this.penaltyTime.Name = "penaltyTime";
+            this.penaltyTime.Size = new System.Drawing.Size(120, 20);
+            this.penaltyTime.TabIndex = 20;
+            this.penaltyTime.Value = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
             // 
             // autoplay
             // 
@@ -352,6 +359,8 @@
             // 
             // runningPanel
             // 
+            this.runningPanel.Controls.Add(this.AdsBtn);
+            this.runningPanel.Controls.Add(this.AutoAds);
             this.runningPanel.Controls.Add(this.UtvisningBorte);
             this.runningPanel.Controls.Add(this.UtvisningHjemme);
             this.runningPanel.Controls.Add(this.RedAway);
@@ -378,9 +387,29 @@
             this.runningPanel.Size = new System.Drawing.Size(476, 557);
             this.runningPanel.TabIndex = 16;
             // 
+            // AdsBtn
+            // 
+            this.AdsBtn.Location = new System.Drawing.Point(180, 528);
+            this.AdsBtn.Name = "AdsBtn";
+            this.AdsBtn.Size = new System.Drawing.Size(89, 23);
+            this.AdsBtn.TabIndex = 0;
+            this.AdsBtn.Text = "Start Reklame";
+            this.AdsBtn.UseVisualStyleBackColor = true;
+            this.AdsBtn.Click += new System.EventHandler(this.AdsBtn_Click);
+            // 
+            // AutoAds
+            // 
+            this.AutoAds.AutoSize = true;
+            this.AutoAds.Location = new System.Drawing.Point(311, 26);
+            this.AutoAds.Name = "AutoAds";
+            this.AutoAds.Size = new System.Drawing.Size(110, 17);
+            this.AutoAds.TabIndex = 29;
+            this.AutoAds.Text = "Autospill Reklame";
+            this.AutoAds.UseVisualStyleBackColor = true;
+            // 
             // UtvisningBorte
             // 
-            this.UtvisningBorte.Location = new System.Drawing.Point(399, 371);
+            this.UtvisningBorte.Location = new System.Drawing.Point(390, 335);
             this.UtvisningBorte.Name = "UtvisningBorte";
             this.UtvisningBorte.Size = new System.Drawing.Size(65, 30);
             this.UtvisningBorte.TabIndex = 28;
@@ -390,7 +419,7 @@
             // 
             // UtvisningHjemme
             // 
-            this.UtvisningHjemme.Location = new System.Drawing.Point(144, 371);
+            this.UtvisningHjemme.Location = new System.Drawing.Point(135, 335);
             this.UtvisningHjemme.Name = "UtvisningHjemme";
             this.UtvisningHjemme.Size = new System.Drawing.Size(65, 30);
             this.UtvisningHjemme.TabIndex = 27;
@@ -401,7 +430,7 @@
             // RedAway
             // 
             this.RedAway.Image = ((System.Drawing.Image)(resources.GetObject("RedAway.Image")));
-            this.RedAway.Location = new System.Drawing.Point(341, 371);
+            this.RedAway.Location = new System.Drawing.Point(332, 335);
             this.RedAway.Name = "RedAway";
             this.RedAway.Size = new System.Drawing.Size(52, 75);
             this.RedAway.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -412,7 +441,7 @@
             // YellowAway
             // 
             this.YellowAway.Image = global::Poengtavle.Properties.Resources.yellow;
-            this.YellowAway.Location = new System.Drawing.Point(284, 371);
+            this.YellowAway.Location = new System.Drawing.Point(275, 335);
             this.YellowAway.Name = "YellowAway";
             this.YellowAway.Size = new System.Drawing.Size(52, 75);
             this.YellowAway.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -423,7 +452,7 @@
             // RedHome
             // 
             this.RedHome.Image = ((System.Drawing.Image)(resources.GetObject("RedHome.Image")));
-            this.RedHome.Location = new System.Drawing.Point(86, 371);
+            this.RedHome.Location = new System.Drawing.Point(77, 335);
             this.RedHome.Name = "RedHome";
             this.RedHome.Size = new System.Drawing.Size(52, 75);
             this.RedHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -434,7 +463,7 @@
             // YellowHome
             // 
             this.YellowHome.Image = global::Poengtavle.Properties.Resources.yellow;
-            this.YellowHome.Location = new System.Drawing.Point(29, 371);
+            this.YellowHome.Location = new System.Drawing.Point(20, 335);
             this.YellowHome.Name = "YellowHome";
             this.YellowHome.Size = new System.Drawing.Size(52, 75);
             this.YellowHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -444,7 +473,7 @@
             // 
             // changeMusic
             // 
-            this.changeMusic.Location = new System.Drawing.Point(261, 94);
+            this.changeMusic.Location = new System.Drawing.Point(20, 528);
             this.changeMusic.Name = "changeMusic";
             this.changeMusic.Size = new System.Drawing.Size(67, 27);
             this.changeMusic.TabIndex = 17;
@@ -455,7 +484,7 @@
             // wmp
             // 
             this.wmp.Enabled = true;
-            this.wmp.Location = new System.Drawing.Point(261, 26);
+            this.wmp.Location = new System.Drawing.Point(28, 460);
             this.wmp.Name = "wmp";
             this.wmp.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp.OcxState")));
             this.wmp.Size = new System.Drawing.Size(212, 62);
@@ -473,7 +502,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(284, 158);
+            this.button1.Location = new System.Drawing.Point(275, 122);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 13;
@@ -504,7 +533,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.period)).EndInit();
             this.SetupPanel.ResumeLayout(false);
             this.SetupPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.penaltyTime)).EndInit();
             this.runningPanel.ResumeLayout(false);
             this.runningPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RedAway)).EndInit();
@@ -552,9 +581,11 @@
         private System.Windows.Forms.PictureBox RedAway;
         private System.Windows.Forms.PictureBox YellowAway;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown penaltyTime;
         private System.Windows.Forms.Button UtvisningBorte;
         private System.Windows.Forms.Button UtvisningHjemme;
+        private System.Windows.Forms.CheckBox AutoAds;
+        private System.Windows.Forms.Button AdsBtn;
     }
 }
 

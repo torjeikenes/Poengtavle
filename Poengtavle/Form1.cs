@@ -21,11 +21,14 @@ namespace Poengtavle
         List<cdTimer> penalties = new List<cdTimer>();
         int hTimers = 0;
         int aTimers = 0;
+        Timer adTimer = new Timer();
+        
        
         public Form1()
         {
             InitializeComponent();
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -34,6 +37,8 @@ namespace Poengtavle
             runningPanel.Location = new Point(0, 0);
             runningPanel.Visible = false;
             SetupPanel.Dock = DockStyle.Fill;
+            AdsPanel.Dock = DockStyle.Fill;
+            AdsPanel.Visible = false;
         }
 
         #region score
@@ -259,20 +264,46 @@ namespace Poengtavle
         }
         #endregion
 
+        #region penalty
         private void Penalty(object sender, EventArgs e)
         {
             Button bt = sender as Button;
             
             if (bt.Name.Contains("Hjemme"))
             {
-                penalties.Add(new cdTimer(120,"hjemme", hTimers, visning));
+                penalties.Add(new cdTimer(Convert.ToInt32(penaltyTime.Value),"hjemme", hTimers, visning));
                 hTimers++;
+                WriteCsv(HomeTeam.Text, "utvisning");
             }
             else
             {
-                penalties.Add(new cdTimer(120,"borte", aTimers, visning));
+                penalties.Add(new cdTimer(Convert.ToInt32(penaltyTime.Value),"borte", aTimers, visning));
                 aTimers++;
+                WriteCsv(AwayTeam.Text, "utvisning");
             }
+        }
+
+        #endregion
+
+        private void AdsBtn_Click(object sender, EventArgs e)
+        {
+            if (AdsBtn.Text == "Start Reklame")
+            {
+                AdsPanel.Visible = true;
+                AdsBtn.Text = "Stopp Reklame";
+                adTimer.Start();
+            }
+            else
+            {
+                AdsPanel.Visible = false;
+                AdsBtn.Text = "Start Reklame";
+                adTimer.Stop();
+            }
+        }
+
+        private void NewAdd()
+        {
+            visning.ad
 
 
         }

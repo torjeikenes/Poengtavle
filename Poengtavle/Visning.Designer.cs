@@ -40,10 +40,14 @@
             this.YellowAway = new System.Windows.Forms.PictureBox();
             this.RedHome = new System.Windows.Forms.PictureBox();
             this.YellowHome = new System.Windows.Forms.PictureBox();
+            this.AdsPanel = new System.Windows.Forms.Panel();
+            this.Ads = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.RedAway)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YellowAway)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RedHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YellowHome)).BeginInit();
+            this.AdsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Ads)).BeginInit();
             this.SuspendLayout();
             // 
             // Tid
@@ -156,13 +160,32 @@
             this.YellowHome.TabIndex = 21;
             this.YellowHome.TabStop = false;
             // 
+            // AdsPanel
+            // 
+            this.AdsPanel.Controls.Add(this.Ads);
+            this.AdsPanel.Location = new System.Drawing.Point(101, 374);
+            this.AdsPanel.Name = "AdsPanel";
+            this.AdsPanel.Size = new System.Drawing.Size(293, 176);
+            this.AdsPanel.TabIndex = 25;
+            // 
+            // Ads
+            // 
+            this.Ads.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Ads.Location = new System.Drawing.Point(0, 0);
+            this.Ads.Name = "Ads";
+            this.Ads.Size = new System.Drawing.Size(293, 176);
+            this.Ads.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Ads.TabIndex = 0;
+            this.Ads.TabStop = false;
+            // 
             // Visning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(745, 431);
+            this.ClientSize = new System.Drawing.Size(950, 562);
+            this.Controls.Add(this.AdsPanel);
             this.Controls.Add(this.RedAway);
             this.Controls.Add(this.YellowAway);
             this.Controls.Add(this.RedHome);
@@ -181,6 +204,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.YellowAway)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RedHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YellowHome)).EndInit();
+            this.AdsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Ads)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +223,7 @@
         public System.Windows.Forms.PictureBox YellowAway;
         public System.Windows.Forms.PictureBox RedHome;
         public System.Windows.Forms.PictureBox YellowHome;
+        private System.Windows.Forms.Panel AdsPanel;
+        private System.Windows.Forms.PictureBox Ads;
     }
 }

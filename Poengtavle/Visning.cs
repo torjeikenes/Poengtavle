@@ -14,12 +14,9 @@ namespace Poengtavle
     {
         private int home;
         private int away;
-        private bool gameGoing;
-
         private int totSec = 1800;
         private int min;
         private int sec;
-
 
         public Visning()
         {
@@ -80,6 +77,11 @@ namespace Poengtavle
             sec = totSec % 60;
 
             Tid.Text = min + ":" + sec;
+        }
+
+        private void NewAdd(string path, int nr)
+        {
+            
 
 
         }

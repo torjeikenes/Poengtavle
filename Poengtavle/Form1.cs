@@ -13,7 +13,6 @@ namespace Poengtavle
 {
     public partial class Form1 : Form
     {
-        Visning visning = new Visning();
         private int totSec = 1800;
         private int min;
         private int sec;
@@ -21,14 +20,12 @@ namespace Poengtavle
         List<cdTimer> penalties = new List<cdTimer>();
         int hTimers = 0;
         int aTimers = 0;
-        Timer adTimer = new Timer();
-        
+        Visning visning = new Visning();
        
         public Form1()
         {
             InitializeComponent();
         }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -37,8 +34,7 @@ namespace Poengtavle
             runningPanel.Location = new Point(0, 0);
             runningPanel.Visible = false;
             SetupPanel.Dock = DockStyle.Fill;
-            AdsPanel.Dock = DockStyle.Fill;
-            AdsPanel.Visible = false;
+            visning.Path = path;
         }
 
         #region score
@@ -289,23 +285,15 @@ namespace Poengtavle
         {
             if (AdsBtn.Text == "Start Reklame")
             {
-                AdsPanel.Visible = true;
                 AdsBtn.Text = "Stopp Reklame";
-                adTimer.Start();
+                visning.ShowAdd(true);
             }
             else
             {
-                AdsPanel.Visible = false;
                 AdsBtn.Text = "Start Reklame";
-                adTimer.Stop();
+                visning.ShowAdd(false);
             }
         }
 
-        private void NewAdd()
-        {
-            visning.ad
-
-
-        }
     }
 }

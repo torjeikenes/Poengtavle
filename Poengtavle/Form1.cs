@@ -17,7 +17,7 @@ namespace Poengtavle
         private int min;
         private int sec;
         private string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        List<cdTimer> penalties = new List<cdTimer>();
+        List<CdTimer> penalties = new List<CdTimer>();
         int hTimers = 0;
         int aTimers = 0;
         Visning visning = new Visning();
@@ -38,6 +38,7 @@ namespace Poengtavle
         }
 
         #region score
+        // UpdateScore kjører automatisk når verdien endres på homeScore eller awayScore
         private void UpdateScore(object sender, EventArgs e)
         {
             // kjører funksjonen SetScore i visningsformen for å vise riktig score. 
@@ -46,40 +47,40 @@ namespace Poengtavle
         }
 
         // Øker scoren og skriver til csv filen
-        private void scoreHome_Click(object sender, EventArgs e)
+        private void ScoreHome_Click(object sender, EventArgs e)
         {
-            homeScore.Value++;
+            homeScore.Value += PointsPerGoal.Value;
             WriteCsv(HomeTeam.Text);
         }
 
         private void ScoreAway_Click(object sender, EventArgs e)
         {
-            awayScore.Value++;
+            awayScore.Value += PointsPerGoal.Value;
             WriteCsv(AwayTeam.Text);
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
         #endregion
 
         #region timer
 
-        // Starter timeren og stopper musikk om man har krysset av på autoplay
-        private void startTimer_Click(object sender, EventArgs e)
+        // Starter timeren og stopper musikk og reklame om man har krysset av på autoplay
+        private void StartTimer_Click(object sender, EventArgs e)
         {
             timer1.Start();
             if (AutoMusic.Checked) 
                 wmp.Ctlcontrols.pause();
+            if (AutoAds.Checked)
+                visning.ShowAd(false);
         }
 
-        // Stopper timeren og starter musikk om man har krysset autoplay
-        private void stopTimer_Click(object sender, EventArgs e)
+        // Stopper timeren og starter musikk og reklame om man har krysset autoplay
+        private void StopTimer_Click(object sender, EventArgs e)
         {
             timer1.Stop();
             if (AutoMusic.Checked)
                 wmp.Ctlcontrols.play();
+            if (AutoAds.Checked)
+                visning.ShowAd(true);
         }
 
         // Setter tilbake timeren til tiden satt på setup
@@ -95,7 +96,7 @@ namespace Poengtavle
         }
         
         // trekker fra ett sekund per tick og viser tiden riktig
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             totSec--;
 
@@ -109,9 +110,9 @@ namespace Poengtavle
 
             DisplayTime(totSec);
 
-            foreach(cdTimer t in penalties)
+            foreach(CdTimer t in penalties)
             {
-                t.tick();
+                t.Tick();
 
             }
 
@@ -134,7 +135,7 @@ namespace Poengtavle
         #region setup
 
         // Viser perioden på visningsskjermen om den er endret
-        private void period_ValueChanged(object sender, EventArgs e)
+        private void Period_ValueChanged(object sender, EventArgs e)
         {
             visning.Period.Text = Convert.ToString(period.Value);
         }
@@ -189,7 +190,7 @@ namespace Poengtavle
         // setter opp en spilleliste med valgte sanger
         private void LoadMusic(object sender, EventArgs e)
         {
-            // setter filter og åpner en fil dialog for å velge sanger
+            // setter filter og åpner en fildialog for å velge sanger
             ofd.Filter = "music files (*.mp3)|*.mp3";
             ofd.ShowDialog();
 
@@ -212,6 +213,7 @@ namespace Poengtavle
         }
         #endregion
 
+        // Viser røde og gule kort om de blir trykket på
         #region cards
         private void CardClicked(object sender, EventArgs e)
         {
@@ -245,6 +247,7 @@ namespace Poengtavle
                     break;
             }
 
+            // Endrer border på bildet når kortet er valgt og skriver til csv filen
             if (card.BorderStyle == BorderStyle.None)
             {
                 card.BorderStyle = BorderStyle.Fixed3D;
@@ -260,20 +263,22 @@ namespace Poengtavle
         }
         #endregion
 
+        // Setter opp countdown timere for utvisning
         #region penalty
         private void Penalty(object sender, EventArgs e)
         {
             Button bt = sender as Button;
             
+            // legger til en ly cdTimer instanse i penalties listen, øker antal timere og skriver til csv
             if (bt.Name.Contains("Hjemme"))
             {
-                penalties.Add(new cdTimer(Convert.ToInt32(penaltyTime.Value),"hjemme", hTimers, visning));
+                penalties.Add(new CdTimer(Convert.ToInt32(penaltyTime.Value),"hjemme", hTimers, visning));
                 hTimers++;
                 WriteCsv(HomeTeam.Text, "utvisning");
             }
             else
             {
-                penalties.Add(new cdTimer(Convert.ToInt32(penaltyTime.Value),"borte", aTimers, visning));
+                penalties.Add(new CdTimer(Convert.ToInt32(penaltyTime.Value),"borte", aTimers, visning));
                 aTimers++;
                 WriteCsv(AwayTeam.Text, "utvisning");
             }
@@ -281,19 +286,23 @@ namespace Poengtavle
 
         #endregion
 
+        // Viser reklame om man trykker på knappen
+        #region ads
         private void AdsBtn_Click(object sender, EventArgs e)
         {
             if (AdsBtn.Text == "Start Reklame")
             {
                 AdsBtn.Text = "Stopp Reklame";
-                visning.ShowAdd(true);
+                visning.ShowAd(true);
             }
             else
             {
                 AdsBtn.Text = "Start Reklame";
-                visning.ShowAdd(false);
+                visning.ShowAd(false);
             }
         }
+        #endregion
+
 
     }
 }

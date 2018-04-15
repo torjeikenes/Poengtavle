@@ -36,7 +36,7 @@
             this.awayScore = new System.Windows.Forms.NumericUpDown();
             this.homeLb = new System.Windows.Forms.Label();
             this.awayLb = new System.Windows.Forms.Label();
-            this.scoreHome = new System.Windows.Forms.Button();
+            this.ScoreHome = new System.Windows.Forms.Button();
             this.ScoreAway = new System.Windows.Forms.Button();
             this.periods = new System.Windows.Forms.NumericUpDown();
             this.minutes = new System.Windows.Forms.NumericUpDown();
@@ -49,7 +49,6 @@
             this.SetupPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.penaltyTime = new System.Windows.Forms.NumericUpDown();
-            this.autoplay = new System.Windows.Forms.CheckBox();
             this.AwayTeam = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.HomeTeam = new System.Windows.Forms.TextBox();
@@ -69,6 +68,8 @@
             this.AutoMusic = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
+            this.PointsPerGoal = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.homeScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.awayScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.periods)).BeginInit();
@@ -82,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.RedHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YellowHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PointsPerGoal)).BeginInit();
             this.SuspendLayout();
             // 
             // startTimer
@@ -93,7 +95,7 @@
             this.startTimer.TabIndex = 0;
             this.startTimer.Text = "Start Timer";
             this.startTimer.UseVisualStyleBackColor = true;
-            this.startTimer.Click += new System.EventHandler(this.startTimer_Click);
+            this.startTimer.Click += new System.EventHandler(this.StartTimer_Click);
             // 
             // stopTimer
             // 
@@ -104,7 +106,7 @@
             this.stopTimer.TabIndex = 1;
             this.stopTimer.Text = "Stopp Timer";
             this.stopTimer.UseVisualStyleBackColor = true;
-            this.stopTimer.Click += new System.EventHandler(this.stopTimer_Click);
+            this.stopTimer.Click += new System.EventHandler(this.StopTimer_Click);
             // 
             // homeScore
             // 
@@ -148,16 +150,16 @@
             this.awayLb.Text = "Borte";
             this.awayLb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // scoreHome
+            // ScoreHome
             // 
-            this.scoreHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreHome.Location = new System.Drawing.Point(20, 257);
-            this.scoreHome.Name = "scoreHome";
-            this.scoreHome.Size = new System.Drawing.Size(109, 72);
-            this.scoreHome.TabIndex = 6;
-            this.scoreHome.Text = "Mål Hjemme";
-            this.scoreHome.UseVisualStyleBackColor = true;
-            this.scoreHome.Click += new System.EventHandler(this.scoreHome_Click);
+            this.ScoreHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreHome.Location = new System.Drawing.Point(20, 257);
+            this.ScoreHome.Name = "ScoreHome";
+            this.ScoreHome.Size = new System.Drawing.Size(109, 72);
+            this.ScoreHome.TabIndex = 6;
+            this.ScoreHome.Text = "Mål Hjemme";
+            this.ScoreHome.UseVisualStyleBackColor = true;
+            this.ScoreHome.Click += new System.EventHandler(this.ScoreHome_Click);
             // 
             // ScoreAway
             // 
@@ -212,7 +214,7 @@
             0,
             0,
             0});
-            this.period.ValueChanged += new System.EventHandler(this.period_ValueChanged);
+            this.period.ValueChanged += new System.EventHandler(this.Period_ValueChanged);
             // 
             // label3
             // 
@@ -228,7 +230,7 @@
             // timer1
             // 
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // time
             // 
@@ -260,9 +262,10 @@
             // 
             // SetupPanel
             // 
+            this.SetupPanel.Controls.Add(this.label2);
+            this.SetupPanel.Controls.Add(this.PointsPerGoal);
             this.SetupPanel.Controls.Add(this.label1);
             this.SetupPanel.Controls.Add(this.penaltyTime);
-            this.SetupPanel.Controls.Add(this.autoplay);
             this.SetupPanel.Controls.Add(this.AwayTeam);
             this.SetupPanel.Controls.Add(this.label7);
             this.SetupPanel.Controls.Add(this.HomeTeam);
@@ -274,7 +277,7 @@
             this.SetupPanel.Controls.Add(this.minutes);
             this.SetupPanel.Location = new System.Drawing.Point(12, 27);
             this.SetupPanel.Name = "SetupPanel";
-            this.SetupPanel.Size = new System.Drawing.Size(371, 222);
+            this.SetupPanel.Size = new System.Drawing.Size(371, 346);
             this.SetupPanel.TabIndex = 15;
             // 
             // label1
@@ -303,19 +306,9 @@
             0,
             0});
             // 
-            // autoplay
-            // 
-            this.autoplay.AutoSize = true;
-            this.autoplay.Location = new System.Drawing.Point(267, 3);
-            this.autoplay.Name = "autoplay";
-            this.autoplay.Size = new System.Drawing.Size(101, 17);
-            this.autoplay.TabIndex = 14;
-            this.autoplay.Text = "Autospill musikk";
-            this.autoplay.UseVisualStyleBackColor = true;
-            // 
             // AwayTeam
             // 
-            this.AwayTeam.Location = new System.Drawing.Point(133, 126);
+            this.AwayTeam.Location = new System.Drawing.Point(132, 164);
             this.AwayTeam.Name = "AwayTeam";
             this.AwayTeam.Size = new System.Drawing.Size(100, 20);
             this.AwayTeam.TabIndex = 19;
@@ -324,7 +317,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(130, 110);
+            this.label7.Location = new System.Drawing.Point(129, 148);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 18;
@@ -332,7 +325,7 @@
             // 
             // HomeTeam
             // 
-            this.HomeTeam.Location = new System.Drawing.Point(6, 126);
+            this.HomeTeam.Location = new System.Drawing.Point(5, 164);
             this.HomeTeam.Name = "HomeTeam";
             this.HomeTeam.Size = new System.Drawing.Size(100, 20);
             this.HomeTeam.TabIndex = 17;
@@ -341,7 +334,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 110);
+            this.label6.Location = new System.Drawing.Point(2, 148);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 16;
@@ -349,11 +342,11 @@
             // 
             // Setup
             // 
-            this.Setup.Location = new System.Drawing.Point(135, 187);
+            this.Setup.Location = new System.Drawing.Point(132, 190);
             this.Setup.Name = "Setup";
             this.Setup.Size = new System.Drawing.Size(75, 23);
             this.Setup.TabIndex = 15;
-            this.Setup.Text = "Setup";
+            this.Setup.Text = "Start";
             this.Setup.UseVisualStyleBackColor = true;
             this.Setup.Click += new System.EventHandler(this.Setup_Click);
             // 
@@ -381,15 +374,15 @@
             this.runningPanel.Controls.Add(this.homeLb);
             this.runningPanel.Controls.Add(this.ScoreAway);
             this.runningPanel.Controls.Add(this.awayLb);
-            this.runningPanel.Controls.Add(this.scoreHome);
+            this.runningPanel.Controls.Add(this.ScoreHome);
             this.runningPanel.Location = new System.Drawing.Point(389, 27);
             this.runningPanel.Name = "runningPanel";
-            this.runningPanel.Size = new System.Drawing.Size(476, 557);
+            this.runningPanel.Size = new System.Drawing.Size(628, 557);
             this.runningPanel.TabIndex = 16;
             // 
             // AdsBtn
             // 
-            this.AdsBtn.Location = new System.Drawing.Point(180, 528);
+            this.AdsBtn.Location = new System.Drawing.Point(501, 81);
             this.AdsBtn.Name = "AdsBtn";
             this.AdsBtn.Size = new System.Drawing.Size(89, 23);
             this.AdsBtn.TabIndex = 0;
@@ -400,7 +393,7 @@
             // AutoAds
             // 
             this.AutoAds.AutoSize = true;
-            this.AutoAds.Location = new System.Drawing.Point(311, 26);
+            this.AutoAds.Location = new System.Drawing.Point(501, 114);
             this.AutoAds.Name = "AutoAds";
             this.AutoAds.Size = new System.Drawing.Size(110, 17);
             this.AutoAds.TabIndex = 29;
@@ -414,7 +407,6 @@
             this.UtvisningBorte.Size = new System.Drawing.Size(65, 30);
             this.UtvisningBorte.TabIndex = 28;
             this.UtvisningBorte.Text = "Utvisning";
-            this.UtvisningBorte.UseVisualStyleBackColor = true;
             this.UtvisningBorte.Click += new System.EventHandler(this.Penalty);
             // 
             // UtvisningHjemme
@@ -473,7 +465,7 @@
             // 
             // changeMusic
             // 
-            this.changeMusic.Location = new System.Drawing.Point(20, 528);
+            this.changeMusic.Location = new System.Drawing.Point(378, 81);
             this.changeMusic.Name = "changeMusic";
             this.changeMusic.Size = new System.Drawing.Size(67, 27);
             this.changeMusic.TabIndex = 17;
@@ -484,7 +476,7 @@
             // wmp
             // 
             this.wmp.Enabled = true;
-            this.wmp.Location = new System.Drawing.Point(28, 460);
+            this.wmp.Location = new System.Drawing.Point(378, 3);
             this.wmp.Name = "wmp";
             this.wmp.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp.OcxState")));
             this.wmp.Size = new System.Drawing.Size(212, 62);
@@ -493,7 +485,7 @@
             // AutoMusic
             // 
             this.AutoMusic.AutoSize = true;
-            this.AutoMusic.Location = new System.Drawing.Point(311, 3);
+            this.AutoMusic.Location = new System.Drawing.Point(378, 114);
             this.AutoMusic.Name = "AutoMusic";
             this.AutoMusic.Size = new System.Drawing.Size(101, 17);
             this.AutoMusic.TabIndex = 15;
@@ -515,12 +507,38 @@
             this.ofd.DefaultExt = "mp3";
             this.ofd.Multiselect = true;
             // 
+            // PointsPerGoal
+            // 
+            this.PointsPerGoal.Location = new System.Drawing.Point(113, 86);
+            this.PointsPerGoal.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.PointsPerGoal.Name = "PointsPerGoal";
+            this.PointsPerGoal.Size = new System.Drawing.Size(120, 20);
+            this.PointsPerGoal.TabIndex = 22;
+            this.PointsPerGoal.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Poeng per mål";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(881, 596);
+            this.ClientSize = new System.Drawing.Size(1073, 596);
             this.Controls.Add(this.runningPanel);
             this.Controls.Add(this.SetupPanel);
             this.Name = "Form1";
@@ -541,6 +559,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.RedHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YellowHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PointsPerGoal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -553,7 +572,7 @@
         private System.Windows.Forms.NumericUpDown awayScore;
         private System.Windows.Forms.Label homeLb;
         private System.Windows.Forms.Label awayLb;
-        private System.Windows.Forms.Button scoreHome;
+        private System.Windows.Forms.Button ScoreHome;
         private System.Windows.Forms.Button ScoreAway;
         private System.Windows.Forms.NumericUpDown periods;
         private System.Windows.Forms.NumericUpDown minutes;
@@ -571,7 +590,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox HomeTeam;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox autoplay;
         private AxWMPLib.AxWindowsMediaPlayer wmp;
         private System.Windows.Forms.CheckBox AutoMusic;
         private System.Windows.Forms.OpenFileDialog ofd;
@@ -586,6 +604,8 @@
         private System.Windows.Forms.Button UtvisningHjemme;
         private System.Windows.Forms.CheckBox AutoAds;
         private System.Windows.Forms.Button AdsBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown PointsPerGoal;
     }
 }
 

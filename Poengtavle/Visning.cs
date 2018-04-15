@@ -49,21 +49,11 @@ namespace Poengtavle
             set { path = value; }
         }
 
-        public void SetScore(string team)
-        {
-            switch (team)
-            {
-                case "home":
-                    home++;
-                    break;
-                case "away":
-                    away++;
-                    break;
-                default:
-                    break;
-            }
-        }
-
+        /// <summary>
+        /// Setter poengsummen til et lag
+        /// </summary>
+        /// <param name="team">laget som får poeng</param>
+        /// <param name="score">hvor mange poeng laget får</param>
         public void SetScore(string team, int score)
         {
             switch (team)
@@ -81,29 +71,34 @@ namespace Poengtavle
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             totSec--;
-            
 
             if (sec == 0)
             {
                 sec = 59;
             }
 
+            // finner antal minutter og sekunder utfra totale antall sekunder
             min = totSec / 60;
             sec = totSec % 60;
 
             Tid.Text = min + ":" + sec;
         }
 
-        public void NewAdd(string path, int nr)
+
+        public void NewAd(string path, int nr)
         {
             AdsPanel.Visible = true;
             adTimer.Start();
         }
 
-        public void ShowAdd(bool show)
+        /// <summary>
+        /// Viser eller gjemmer reklame. show = true viser reklame og show = false gjemmer reklame
+        /// </summary>
+        /// <param name="show"></param>
+        public void ShowAd(bool show)
         {
             if (show)
             {
@@ -117,29 +112,28 @@ namespace Poengtavle
             }
         }
 
-        private void adTimer_Tick(object sender, EventArgs e)
+        // Timer for reklame
+        private void AdTimer_Tick(object sender, EventArgs e)
         {
+            // Setter inn alle bildene i folderen i et string array 
+            // Reklamer plasseres i Documents\reklame
             string[] images = Directory.GetFiles(path + @"\reklame\");
+            // setter reklamebildet til bildet med indeksen adNr
             Ads.Image = Image.FromFile(images[adNr]);
 
-            Console.WriteLine(adCount);
+            
+            // Øker adNr og reseter telleren for reklamelengde om reklamen har stått lenge nok
             if (adCount > adLength)
             {
-                Console.WriteLine("adnr" + adNr);
-
                 adNr++;
                 adCount = 0;
                 if (adNr >= images.Length)
                     adNr = 0;
             }
 
+            // øker telleren for reklamelengde
             adCount++;
         }
 
-        private void Visning_SizeChanged(object sender, EventArgs e)
-        {
-            visningPanel.Location = new Point((this.Width / 2) - (visningPanel.Width / 2), (this.Height / 2) - (visningPanel.Height / 2));
-
-        }
     }
 }

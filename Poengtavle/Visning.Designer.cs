@@ -55,7 +55,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.visningPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.RedAway)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YellowAway)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RedHome)).BeginInit();
@@ -66,14 +65,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.visningPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Tid
             // 
             this.Tid.AutoSize = true;
             this.Tid.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tid.Location = new System.Drawing.Point(153, 61);
+            this.Tid.Location = new System.Drawing.Point(167, 66);
             this.Tid.Name = "Tid";
             this.Tid.Size = new System.Drawing.Size(178, 108);
             this.Tid.TabIndex = 0;
@@ -83,7 +81,7 @@
             // 
             this.homeScr.AutoSize = true;
             this.homeScr.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeScr.Location = new System.Drawing.Point(15, 211);
+            this.homeScr.Location = new System.Drawing.Point(29, 216);
             this.homeScr.Name = "homeScr";
             this.homeScr.Size = new System.Drawing.Size(39, 42);
             this.homeScr.TabIndex = 2;
@@ -93,7 +91,7 @@
             // 
             this.AwayScr.AutoSize = true;
             this.AwayScr.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AwayScr.Location = new System.Drawing.Point(326, 211);
+            this.AwayScr.Location = new System.Drawing.Point(340, 216);
             this.AwayScr.Name = "AwayScr";
             this.AwayScr.Size = new System.Drawing.Size(39, 42);
             this.AwayScr.TabIndex = 3;
@@ -103,7 +101,7 @@
             // 
             this.homeLb.AutoSize = true;
             this.homeLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeLb.Location = new System.Drawing.Point(15, 169);
+            this.homeLb.Location = new System.Drawing.Point(29, 174);
             this.homeLb.Name = "homeLb";
             this.homeLb.Size = new System.Drawing.Size(155, 42);
             this.homeLb.TabIndex = 4;
@@ -113,7 +111,7 @@
             // 
             this.AwayLb.AutoSize = true;
             this.AwayLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AwayLb.Location = new System.Drawing.Point(326, 169);
+            this.AwayLb.Location = new System.Drawing.Point(340, 174);
             this.AwayLb.Name = "AwayLb";
             this.AwayLb.Size = new System.Drawing.Size(107, 42);
             this.AwayLb.TabIndex = 5;
@@ -123,7 +121,7 @@
             // 
             this.Period.AutoSize = true;
             this.Period.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Period.Location = new System.Drawing.Point(232, 28);
+            this.Period.Location = new System.Drawing.Point(246, 33);
             this.Period.Name = "Period";
             this.Period.Size = new System.Drawing.Size(20, 24);
             this.Period.TabIndex = 6;
@@ -133,7 +131,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(199, 4);
+            this.label3.Location = new System.Drawing.Point(213, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 24);
             this.label3.TabIndex = 7;
@@ -142,7 +140,7 @@
             // RedAway
             // 
             this.RedAway.Image = ((System.Drawing.Image)(resources.GetObject("RedAway.Image")));
-            this.RedAway.Location = new System.Drawing.Point(390, 256);
+            this.RedAway.Location = new System.Drawing.Point(404, 261);
             this.RedAway.Name = "RedAway";
             this.RedAway.Size = new System.Drawing.Size(52, 75);
             this.RedAway.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -152,7 +150,7 @@
             // YellowAway
             // 
             this.YellowAway.Image = global::Poengtavle.Properties.Resources.yellow;
-            this.YellowAway.Location = new System.Drawing.Point(333, 256);
+            this.YellowAway.Location = new System.Drawing.Point(347, 261);
             this.YellowAway.Name = "YellowAway";
             this.YellowAway.Size = new System.Drawing.Size(52, 75);
             this.YellowAway.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -162,7 +160,7 @@
             // RedHome
             // 
             this.RedHome.Image = ((System.Drawing.Image)(resources.GetObject("RedHome.Image")));
-            this.RedHome.Location = new System.Drawing.Point(80, 256);
+            this.RedHome.Location = new System.Drawing.Point(94, 261);
             this.RedHome.Name = "RedHome";
             this.RedHome.Size = new System.Drawing.Size(52, 75);
             this.RedHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -172,7 +170,7 @@
             // YellowHome
             // 
             this.YellowHome.Image = global::Poengtavle.Properties.Resources.yellow;
-            this.YellowHome.Location = new System.Drawing.Point(22, 256);
+            this.YellowHome.Location = new System.Drawing.Point(36, 261);
             this.YellowHome.Name = "YellowHome";
             this.YellowHome.Size = new System.Drawing.Size(52, 75);
             this.YellowHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -200,13 +198,13 @@
             // adTimer
             // 
             this.adTimer.Interval = 1000;
-            this.adTimer.Tick += new System.EventHandler(this.adTimer_Tick);
+            this.adTimer.Tick += new System.EventHandler(this.AdTimer_Tick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(153, 61);
+            this.label1.Location = new System.Drawing.Point(167, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 108);
             this.label1.TabIndex = 0;
@@ -216,7 +214,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 211);
+            this.label2.Location = new System.Drawing.Point(29, 216);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 42);
             this.label2.TabIndex = 2;
@@ -226,7 +224,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(326, 211);
+            this.label4.Location = new System.Drawing.Point(340, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 42);
             this.label4.TabIndex = 3;
@@ -236,7 +234,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 169);
+            this.label5.Location = new System.Drawing.Point(29, 174);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(155, 42);
             this.label5.TabIndex = 4;
@@ -246,7 +244,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(326, 169);
+            this.label6.Location = new System.Drawing.Point(340, 174);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 42);
             this.label6.TabIndex = 5;
@@ -256,7 +254,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(232, 28);
+            this.label7.Location = new System.Drawing.Point(246, 33);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(20, 24);
             this.label7.TabIndex = 6;
@@ -266,7 +264,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(199, 4);
+            this.label8.Location = new System.Drawing.Point(213, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 24);
             this.label8.TabIndex = 7;
@@ -275,7 +273,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Poengtavle.Properties.Resources.yellow;
-            this.pictureBox1.Location = new System.Drawing.Point(22, 256);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 261);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(52, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -285,7 +283,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(80, 256);
+            this.pictureBox2.Location = new System.Drawing.Point(94, 261);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(52, 75);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -295,7 +293,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Poengtavle.Properties.Resources.yellow;
-            this.pictureBox3.Location = new System.Drawing.Point(333, 256);
+            this.pictureBox3.Location = new System.Drawing.Point(347, 261);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(52, 75);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -305,41 +303,12 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(390, 256);
+            this.pictureBox4.Location = new System.Drawing.Point(404, 261);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(52, 75);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 24;
             this.pictureBox4.TabStop = false;
-            // 
-            // visningPanel
-            // 
-            this.visningPanel.Controls.Add(this.label8);
-            this.visningPanel.Controls.Add(this.pictureBox4);
-            this.visningPanel.Controls.Add(this.Tid);
-            this.visningPanel.Controls.Add(this.homeScr);
-            this.visningPanel.Controls.Add(this.pictureBox3);
-            this.visningPanel.Controls.Add(this.label1);
-            this.visningPanel.Controls.Add(this.RedAway);
-            this.visningPanel.Controls.Add(this.AwayScr);
-            this.visningPanel.Controls.Add(this.pictureBox2);
-            this.visningPanel.Controls.Add(this.label2);
-            this.visningPanel.Controls.Add(this.YellowAway);
-            this.visningPanel.Controls.Add(this.homeLb);
-            this.visningPanel.Controls.Add(this.pictureBox1);
-            this.visningPanel.Controls.Add(this.label4);
-            this.visningPanel.Controls.Add(this.RedHome);
-            this.visningPanel.Controls.Add(this.AwayLb);
-            this.visningPanel.Controls.Add(this.label5);
-            this.visningPanel.Controls.Add(this.YellowHome);
-            this.visningPanel.Controls.Add(this.Period);
-            this.visningPanel.Controls.Add(this.label7);
-            this.visningPanel.Controls.Add(this.label6);
-            this.visningPanel.Controls.Add(this.label3);
-            this.visningPanel.Location = new System.Drawing.Point(12, 12);
-            this.visningPanel.Name = "visningPanel";
-            this.visningPanel.Size = new System.Drawing.Size(461, 345);
-            this.visningPanel.TabIndex = 26;
             // 
             // Visning
             // 
@@ -348,13 +317,32 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(950, 562);
-            this.Controls.Add(this.visningPanel);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.AdsPanel);
+            this.Controls.Add(this.Tid);
+            this.Controls.Add(this.homeScr);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.RedAway);
+            this.Controls.Add(this.Period);
+            this.Controls.Add(this.AwayScr);
+            this.Controls.Add(this.YellowHome);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.AwayLb);
+            this.Controls.Add(this.YellowAway);
+            this.Controls.Add(this.RedHome);
+            this.Controls.Add(this.homeLb);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Visning";
             this.Text = "Visning";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Visning_Load);
-            this.SizeChanged += new System.EventHandler(this.Visning_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.RedAway)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YellowAway)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RedHome)).EndInit();
@@ -365,9 +353,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.visningPanel.ResumeLayout(false);
-            this.visningPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -397,6 +384,5 @@
         public System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel visningPanel;
     }
 }
